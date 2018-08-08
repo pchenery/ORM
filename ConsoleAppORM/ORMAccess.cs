@@ -21,8 +21,8 @@ namespace ConsoleAppORM
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                return connection.Query<Employee>("SELECT * FROM Employee");
-                //return connection.Query<Employee, JobPosition>("SELECT * FROM Employee JOIN JobPosition ON Employee.JobPositionId = JobPosition.Id");
+                //return connection.Query<Employee>("SELECT * FROM Employee");
+                return connection.Query<Employee, JobPosition>("SELECT * FROM Employee JOIN JobPosition ON Employee.JobPositionId = JobPosition.Id");
             }
         }
     }

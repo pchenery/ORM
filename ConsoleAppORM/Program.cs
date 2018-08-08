@@ -32,13 +32,13 @@ namespace ConsoleAppORM
         private static void GetEmployeesORM()
         {
             var ormAccess = new ORMAccess();
-            Console.WriteLine();
+            Console.WriteLine(); 
             Console.WriteLine("Employees");
             Console.WriteLine("---------");
 
             foreach (Employee employee in ormAccess.GetAllEmployees())
             {
-                Console.WriteLine($"{employee.Id}: {employee.FirstName}, {employee.LastName}, {employee.Salary}");
+                Console.WriteLine($"{employee.Id}: {employee.FirstName}, {employee.LastName}, {employee.JobPosition.Title}, {employee.Salary}");
             }
         }
     }
