@@ -4,6 +4,7 @@ using ConsoleAppORM.Models;
 using Dapper;
 using Dapper.Contrib.Extensions;
 using Dapper.Mapper;
+using System.Data;
 
 namespace ConsoleAppORM
 {
@@ -40,6 +41,14 @@ namespace ConsoleAppORM
             using (var connection = new SqlConnection(connectionString))
             {
                 return connection.GetAll<Employee>();
+            }
+        }
+
+        public void IncreasePensionContributions()
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Execute("sp_AddPensionContribution", commandType: CommandType.StoredProcedure);
             }
         }
     }

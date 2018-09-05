@@ -9,6 +9,8 @@ namespace ConsoleAppORM
         {
             GetEmployeesORM();
             //GetEmployeesNoSQL();
+            IncreasePensionContributions();
+
             Console.ReadLine();
         }
 
@@ -17,11 +19,24 @@ namespace ConsoleAppORM
             var ormAccess = new ORMAccess();
             Console.WriteLine(); 
             Console.WriteLine("FirstName, LastName, Job Role, Salary, PensionFundBalance");
-            Console.WriteLine("---------");
+            Console.WriteLine("---------------------------------------------------------");
 
             foreach (Financial emp in ormAccess.GetFinancialDataForAllEmployees())
             {
                 Console.WriteLine($"{emp.FirstName + ' ' + emp.LastName}, {emp.JobTitle}, {emp.Salary}, {emp.PensionFundTotal}");
+            }
+        }
+
+        private static void IncreasePensionContributions()
+        {
+            Console.WriteLine("Would you like to increase Employees Pension Funds by 5% of salary?");
+            var answer = Console.ReadLine();
+
+            if (answer != null && answer.ToUpper().Equals("Y"))
+            {
+                var ormAccess = new ORMAccess();
+                ormAccess.IncreasePensionContributions();
+                Console.WriteLine("Updated!");
             }
         }
 
