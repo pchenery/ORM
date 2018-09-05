@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using ConsoleAppORM.Models;
 
 namespace ConsoleAppORM
 {

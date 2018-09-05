@@ -29,6 +29,7 @@ namespace ConsoleAppORM
 
         private static void IncreasePensionContributions()
         {
+            Console.WriteLine();
             Console.WriteLine("Would you like to increase Employees Pension Funds by 5% of salary?");
             var answer = Console.ReadLine();
 
