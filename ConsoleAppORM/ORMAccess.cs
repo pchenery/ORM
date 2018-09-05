@@ -17,12 +17,29 @@ namespace ConsoleAppORM
                 InitialCatalog = "Employee"
             }.ConnectionString;
 
-        public IEnumerable<Employee> GetAllEmployees()
+        public IEnumerable<Financial> GetFinancialDataForAllEmployees()
         {
             using (var connection = new SqlConnection(connectionString))
             {
-                //return connection.Query<Employee>("SELECT * FROM Employee");
-                return connection.Query<Employee, JobPosition>("SELECT * FROM Employee JOIN JobPosition ON Employee.JobPositionId = JobPosition.Id");
+                return connection.Query<Financial>(
+                    @"SELECT e.FirstName,
+                        e.LastName,
+                        jp.Title AS JobTitle,
+                        e.Salary,
+                        p.AmountContributed AS PensionFundTotal
+                        FROM Employee e
+                        JOIN PensionFund p
+                        ON e.Id = p.EmployeeId
+                        JOIN JobPosition jp
+                        ON e.JobPositionId = jp.Id");
+            }
+        }
+
+        public IEnumerable<Employee> GetEmployeeNoSql()
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                return connection.GetAll<Employee>();
             }
         }
     }

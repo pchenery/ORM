@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ConsoleAppORM.Models;
 
 namespace ConsoleAppORM
@@ -11,34 +7,34 @@ namespace ConsoleAppORM
     {
         static void Main(string[] args) 
         {
-            GetEmployeesDirect();
             GetEmployeesORM();
+            //GetEmployeesNoSQL();
             Console.ReadLine();
-        }
-
-        private static void GetEmployeesDirect()
-        {
-            var directAccess = new DirectAccess();
-
-            Console.WriteLine("Employees");
-            Console.WriteLine("---------");
-
-            foreach (string employee in directAccess.GetAllEmployees())
-            {
-                Console.WriteLine(employee);
-            }
         }
 
         private static void GetEmployeesORM()
         {
             var ormAccess = new ORMAccess();
             Console.WriteLine(); 
-            Console.WriteLine("Employees");
+            Console.WriteLine("FirstName, LastName, Job Role, Salary, PensionFundBalance");
             Console.WriteLine("---------");
 
-            foreach (Employee employee in ormAccess.GetAllEmployees())
+            foreach (Financial emp in ormAccess.GetFinancialDataForAllEmployees())
             {
-                Console.WriteLine($"{employee.Id}: {employee.FirstName}, {employee.LastName}, {employee.JobPosition.Title}, {employee.Salary}");
+                Console.WriteLine($"{emp.FirstName + ' ' + emp.LastName}, {emp.JobTitle}, {emp.Salary}, {emp.PensionFundTotal}");
+            }
+        }
+
+        private static void GetEmployeesNoSQL()
+        {
+            var ormAccess = new ORMAccess();
+            Console.WriteLine();
+            Console.WriteLine("EmployeesNoSQL");
+            Console.WriteLine("---------");
+
+            foreach (Employee employee in ormAccess.GetEmployeeNoSql())
+            {
+                Console.WriteLine($"{employee.Id}: {employee.FirstName}, {employee.LastName}, {employee.Salary}");
             }
         }
     }

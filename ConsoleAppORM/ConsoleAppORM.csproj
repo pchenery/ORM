@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="DirectAccess.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Financial.cs" />
     <Compile Include="Models\JobPosition.cs" />
     <Compile Include="Models\PensionFund.cs" />
     <Compile Include="ORMAccess.cs" />
