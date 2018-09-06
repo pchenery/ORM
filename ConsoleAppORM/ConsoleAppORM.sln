@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppORM", "ConsoleAppORM.csproj", "{2C9E0529-B7F5-474F-BC6E-CD75DEE1FFC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmpMigrations", "..\EmpMigrations\EmpMigrations.csproj", "{6DB153EF-E488-4360-B7A9-CB9891EBEE8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2C9E0529-B7F5-474F-BC6E-CD75DEE1FFC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C9E0529-B7F5-474F-BC6E-CD75DEE1FFC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C9E0529-B7F5-474F-BC6E-CD75DEE1FFC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DB153EF-E488-4360-B7A9-CB9891EBEE8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB153EF-E488-4360-B7A9-CB9891EBEE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DB153EF-E488-4360-B7A9-CB9891EBEE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB153EF-E488-4360-B7A9-CB9891EBEE8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

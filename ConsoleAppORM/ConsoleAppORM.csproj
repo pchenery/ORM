@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
     <Compile Include="DirectAccess.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Financial.cs" />
